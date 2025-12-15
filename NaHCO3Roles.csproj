@@ -22,6 +22,10 @@
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
   </ItemGroup>
 
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\**\*.*" />
+	</ItemGroup>
+
   <ItemGroup>
     <Reference Include="AddressablesPlayAssetDelivery">
       <HintPath>..\..\Program Files\Steam\steamapps\common\Among Us\BepInEx\interop\AddressablesPlayAssetDelivery.dll</HintPath>
@@ -389,5 +393,20 @@
     <Reference Include="__Generated">
       <HintPath>..\..\Program Files\Steam\steamapps\common\Among Us\BepInEx\interop\__Generated.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

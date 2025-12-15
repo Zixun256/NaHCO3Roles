@@ -14,13 +14,12 @@ namespace NaHCO3Roles.Roles
         public Color RoleColor => Color.red;
 
         public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
-
-        public static bool IsBerserk = false;
         public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
         {
             CanModifyChance = true,
             DefaultChance = 50,
             DefaultRoleCount = 1
         };
+
     }
 }
