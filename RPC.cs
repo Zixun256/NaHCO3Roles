@@ -5,7 +5,7 @@ namespace NaHCO3Roles
     enum CustomRPC : uint
     {
         Berserk = 70,
-        Calmdown = 71
+        Calmdown
     }
     internal class RPC
     {
@@ -21,6 +21,7 @@ namespace NaHCO3Roles
                 SoundManager.Instance.PlaySound(NAssets.HnSTransformClip.Clip, false);
                 pc.SetKillTimer(0);
                 pc.cosmetics.SetBodyCosmeticsVisible(false);
+                pc.MyPhysics.Speed *= 1.25f;
             }
             [MethodRpc((uint)CustomRPC.Calmdown)]
             public static void RpcCalmdown(PlayerControl pc)
@@ -28,6 +29,7 @@ namespace NaHCO3Roles
                 pc.NetTransform.Halt();
                 pc.MyPhysics.SetBodyType(PlayerBodyTypes.Normal);
                 pc.cosmetics.SetBodyCosmeticsVisible(true);
+                pc.MyPhysics.Speed /= 1.25f;
             }
         }
     }

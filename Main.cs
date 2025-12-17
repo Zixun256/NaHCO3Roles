@@ -29,6 +29,6 @@ namespace NaHCO3Roles
     {
         public const string PLUGIN_GUID = "NaHCO3Roles";
         public const string PLUGIN_NAME = "NaHCO3Roles";
-        public const string PLUGIN_VERSION = "v1.1.1";
+        public const string PLUGIN_VERSION = "v1.1.2";
     }
 }

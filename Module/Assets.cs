@@ -35,7 +35,6 @@ namespace NaHCO3Roles
             }
         }
         public static LoadableResourceAsset BerserkButton { get; } = new("NaHCO3Roles.Resources.BerserkButton.png");
-        public static LoadableResourceAsset TeleportButton { get; } = new("NaHCO3Roles.Resources.TeleportButton.png");
         static public VanillaAudioClip HnSTransformClip { get; private set; } = new("HnS_ImpostorScream");
     }
 }

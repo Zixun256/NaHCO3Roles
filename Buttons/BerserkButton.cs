@@ -2,7 +2,6 @@
 using MiraAPI.Hud;
 using MiraAPI.Keybinds;
 using MiraAPI.Utilities.Assets;
-using NaHCO3.Modules;
 using NaHCO3Roles.Roles;
 using UnityEngine;
 
@@ -19,7 +18,6 @@ namespace NaHCO3Roles.Buttons
         {
             return role is Berserker;
         }
-
         protected override void OnClick()
         {
             RPC.BerserkerRpc.RpcBerserk(PlayerControl.LocalPlayer);
@@ -27,6 +25,11 @@ namespace NaHCO3Roles.Buttons
         public override void OnEffectEnd()
         {
             RPC.BerserkerRpc.RpcCalmdown(PlayerControl.LocalPlayer);
+        }
+        protected override void FixedUpdate(PlayerControl playerControl)
+        {
+            if (playerControl.killTimer != 0 && playerControl.MyPhysics.bodyType == PlayerBodyTypes.Seeker)
+                playerControl.SetKillTimer(0f);
         }
     }
 }
