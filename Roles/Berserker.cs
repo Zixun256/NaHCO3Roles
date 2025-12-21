@@ -9,7 +9,7 @@ namespace NaHCO3Roles.Roles
 
         public string RoleDescription => "我饿啦!!!";
 
-        public string RoleLongDescription => "作为红温者，当点击红温按钮时，你的击杀冷却会变得极短，移速也会加快";
+        public string RoleLongDescription => "红温者是一个简单直白的职业。<br>进入暴怒状态后，攻击冷却和移动速度会更快，但所有人都会知晓你的身份。";
 
         public Color RoleColor => Color.red;
 
